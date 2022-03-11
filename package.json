@@ -73,8 +73,8 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "gatsby build --verbose",
+    "develop": "gatsby develop --verbose",
     "dev": "yarn run develop",
     "serve": "gatsby serve",
     "build:pp": "gatsby build --prefix-paths",
