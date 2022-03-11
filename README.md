@@ -23,18 +23,6 @@ The [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/
 
 If you see any typos or formatting errors in a post, or any other issue that needs to be addressed, please do not hesitate to open a pull request and fix it!
 
-## Acknowledgements
-
-- Ruben Harutyunyan - [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/)
-- Muhammad Muhsin - [Using React Context API with Gatsby](https://www.gatsbyjs.org/blog/2019-01-31-using-react-context-api-with-gatsby/)
-- Thomas Frössman - [ExitWP](https://github.com/thomasf/exitwp) - WordPress XML to Markdown
-
-## Author
-
-- [Tania Rascia](https://www.taniarascia.com)
-
-<a href="https://patreon.com/taniarascia"><img src="https://img.shields.io/endpoint.svg?url=https://shieldsio-patreon.herokuapp.com/taniarascia&style=for-the-badge" alt="Patreon donate button" /> </a>
-
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F1GNP8)
 
 ## License
