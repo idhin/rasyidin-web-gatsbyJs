@@ -1,1192 +1,166 @@
-exports.id = "component---src-templates-category-js";
-exports.ids = ["component---src-templates-category-js"];
+exports.id = 102;
+exports.ids = [102];
 exports.modules = {
 
-/***/ "./data/SiteConfig.js":
-/*!****************************!*\
-  !*** ./data/SiteConfig.js ***!
-  \****************************/
+/***/ 4479:
 /***/ ((module) => {
 
-const config = {
-  siteTitle: 'Khulafaur Rasyidin',
-  siteTitleShort: 'Khulafaurrr',
-  siteTitleAlt: 'Khulafaurrr',
-  siteLogo: '/logos/newlogo-1024.png',
-  siteUrl: 'https://codesbandit.netlify.app',
-  repo: 'https://github.com/messidiq/test',
-  pathPrefix: '',
-  dateFromFormat: 'YYYY-MM-DD',
-  dateFormat: 'MMMM Do, YYYY',
-  siteDescription: 'Catatan Khulafaur Rasyidin',
-  siteRss: '/rss.xml',
-  googleAnalyticsID: 'UA-42068444-1',
-  postDefaultCategoryID: 'Tech',
-  newsletter: 'https://taniarascia.substack.com',
-  newsletterEmbed: 'https://taniarascia.substack.com/embed',
-  userName: 'Khulafaurrr',
-  userEmail: 'khulafaur@rasyid.in',
-  userTwitter: 'codesbandit',
-  menuLinks: [{
-    name: 'Me',
-    link: '/me/'
-  }, {
-    name: 'Blog',
-    link: '/blog/'
-  }, {
-    name: 'Newsletter',
-    link: '/newsletter/'
-  }],
-  themeColor: '#3F80FF',
-  // Used for setting manifest and progress theme colors.
-  backgroundColor: '#ffffff'
-}; // Make sure pathPrefix is empty if not needed
-
-if (config.pathPrefix === '/') {
-  config.pathPrefix = '';
-} else {
-  // Make sure pathPrefix only contains the first forward slash
-  config.pathPrefix = `/${config.pathPrefix.replace(/^\/|\/$/g, '')}`;
-} // Make sure siteUrl doesn't have an ending forward slash
-
-
-if (config.siteUrl.substr(-1) === '/') config.siteUrl = config.siteUrl.slice(0, -1); // Make sure siteRss has a starting forward slash
-
-if (config.siteRss && config.siteRss[0] !== '/') config.siteRss = `/${config.siteRss}`;
-module.exports = config;
+const config={siteTitle:'Khulafaur Rasyidin',siteTitleShort:'Khulafaurrr',siteTitleAlt:'Khulafaurrr',siteLogo:'/logos/newlogo-1024.png',siteUrl:'https://codesbandit.netlify.app',repo:'https://github.com/messidiq/test',pathPrefix:'',dateFromFormat:'YYYY-MM-DD',dateFormat:'MMMM Do, YYYY',siteDescription:'Catatan Khulafaur Rasyidin',siteRss:'/rss.xml',googleAnalyticsID:'UA-42068444-1',postDefaultCategoryID:'Tech',newsletter:'https://taniarascia.substack.com',newsletterEmbed:'https://taniarascia.substack.com/embed',userName:'Khulafaurrr',userEmail:'khulafaur@rasyid.in',userTwitter:'codesbandit',menuLinks:[{name:'Me',link:'/me/'},{name:'Blog',link:'/blog/'}// {
+//   name: 'Newsletter',
+//   link: '/newsletter/',
+// },
+],themeColor:'#3F80FF',// Used for setting manifest and progress theme colors.
+backgroundColor:'#ffffff'};// Make sure pathPrefix is empty if not needed
+if(config.pathPrefix==='/'){config.pathPrefix='';}else{// Make sure pathPrefix only contains the first forward slash
+config.pathPrefix=`/${config.pathPrefix.replace(/^\/|\/$/g,'')}`;}// Make sure siteUrl doesn't have an ending forward slash
+if(config.siteUrl.substr(-1)==='/')config.siteUrl=config.siteUrl.slice(0,-1);// Make sure siteRss has a starting forward slash
+if(config.siteRss&&config.siteRss[0]!=='/')config.siteRss=`/${config.siteRss}`;module.exports=config;
 
 /***/ }),
 
-/***/ "./node_modules/gatsby-image/index.js":
-/*!********************************************!*\
-  !*** ./node_modules/gatsby-image/index.js ***!
-  \********************************************/
+/***/ 6162:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/gatsby/node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-exports.__esModule = true;
-exports["default"] = void 0;
-
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/gatsby/node_modules/@babel/runtime/helpers/assertThisInitialized.js"));
-
-var _inheritsLoose2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/gatsby/node_modules/@babel/runtime/helpers/inheritsLoose.js"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/objectWithoutPropertiesLoose */ "./node_modules/gatsby/node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js"));
-
-var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/gatsby/node_modules/@babel/runtime/helpers/extends.js"));
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
-
-var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
-
-var logDeprecationNotice = function logDeprecationNotice(prop, replacement) {
-  if (false) {}
-
-  console.log("\n    The \"" + prop + "\" prop is now deprecated and will be removed in the next major version\n    of \"gatsby-image\".\n    ");
-
-  if (replacement) {
-    console.log("Please use " + replacement + " instead of \"" + prop + "\".");
-  }
-}; // Handle legacy props during their deprecation phase
-
-
-var convertProps = function convertProps(props) {
-  var convertedProps = (0, _extends2.default)({}, props);
-  var resolutions = convertedProps.resolutions,
-      sizes = convertedProps.sizes,
-      critical = convertedProps.critical;
-
-  if (resolutions) {
-    convertedProps.fixed = resolutions;
-    delete convertedProps.resolutions;
-  }
-
-  if (sizes) {
-    convertedProps.fluid = sizes;
-    delete convertedProps.sizes;
-  }
-
-  if (critical) {
-    logDeprecationNotice("critical", "the native \"loading\" attribute");
-    convertedProps.loading = "eager";
-  } // convert fluid & fixed to arrays so we only have to work with arrays
-
-
-  if (convertedProps.fluid) {
-    convertedProps.fluid = groupByMedia([].concat(convertedProps.fluid));
-  }
-
-  if (convertedProps.fixed) {
-    convertedProps.fixed = groupByMedia([].concat(convertedProps.fixed));
-  }
-
-  return convertedProps;
-};
-/**
+var __webpack_unused_export__;
+var _interopRequireDefault=__webpack_require__(8580);__webpack_unused_export__=true;exports.Z=void 0;var _assertThisInitialized2=_interopRequireDefault(__webpack_require__(5666));var _inheritsLoose2=_interopRequireDefault(__webpack_require__(3793));var _objectWithoutPropertiesLoose2=_interopRequireDefault(__webpack_require__(3246));var _extends2=_interopRequireDefault(__webpack_require__(4362));var _react=_interopRequireDefault(__webpack_require__(8447));var _propTypes=_interopRequireDefault(__webpack_require__(5697));var logDeprecationNotice=function logDeprecationNotice(prop,replacement){if(true){return;}console.log("\n    The \""+prop+"\" prop is now deprecated and will be removed in the next major version\n    of \"gatsby-image\".\n    ");if(replacement){console.log("Please use "+replacement+" instead of \""+prop+"\".");}};// Handle legacy props during their deprecation phase
+var convertProps=function convertProps(props){var convertedProps=(0,_extends2.default)({},props);var resolutions=convertedProps.resolutions,sizes=convertedProps.sizes,critical=convertedProps.critical;if(resolutions){convertedProps.fixed=resolutions;delete convertedProps.resolutions;}if(sizes){convertedProps.fluid=sizes;delete convertedProps.sizes;}if(critical){logDeprecationNotice("critical","the native \"loading\" attribute");convertedProps.loading="eager";}// convert fluid & fixed to arrays so we only have to work with arrays
+if(convertedProps.fluid){convertedProps.fluid=groupByMedia([].concat(convertedProps.fluid));}if(convertedProps.fixed){convertedProps.fixed=groupByMedia([].concat(convertedProps.fixed));}return convertedProps;};/**
  * Checks if fluid or fixed are art-direction arrays.
  *
  * @param currentData  {{media?: string}[]}   The props to check for images.
  * @return {boolean}
- */
-
-
-var hasArtDirectionSupport = function hasArtDirectionSupport(currentData) {
-  return !!currentData && Array.isArray(currentData) && currentData.some(function (image) {
-    return typeof image.media !== "undefined";
-  });
-};
-/**
+ */var hasArtDirectionSupport=function hasArtDirectionSupport(currentData){return!!currentData&&Array.isArray(currentData)&&currentData.some(function(image){return typeof image.media!=="undefined";});};/**
  * Tries to detect if a media query matches the current viewport.
  * @property media   {{media?: string}}  A media query string.
  * @return {boolean}
- */
-
-
-var matchesMedia = function matchesMedia(_ref) {
-  var media = _ref.media;
-  return media ? isBrowser && !!window.matchMedia(media).matches : false;
-};
-/**
+ */var matchesMedia=function matchesMedia(_ref){var media=_ref.media;return media?isBrowser&&!!window.matchMedia(media).matches:false;};/**
  * Find the source of an image to use as a key in the image cache.
  * Use `the first image in either `fixed` or `fluid`
  * @param {{fluid: {src: string, media?: string}[], fixed: {src: string, media?: string}[]}} args
  * @return {string}
- */
-
-
-var getImageSrcKey = function getImageSrcKey(_ref2) {
-  var fluid = _ref2.fluid,
-      fixed = _ref2.fixed;
-  var data = fluid ? getCurrentSrcData(fluid) : getCurrentSrcData(fixed);
-  return data.src;
-};
-/**
+ */var getImageSrcKey=function getImageSrcKey(_ref2){var fluid=_ref2.fluid,fixed=_ref2.fixed;var data=fluid?getCurrentSrcData(fluid):getCurrentSrcData(fixed);return data.src;};/**
  * Returns the current src - Preferably with art-direction support.
  * @param currentData  {{media?: string}[]}   The fluid or fixed image array.
  * @return {{src: string, media?: string}}
- */
-
-
-var getCurrentSrcData = function getCurrentSrcData(currentData) {
-  if (isBrowser && hasArtDirectionSupport(currentData)) {
-    // Do we have an image for the current Viewport?
-    var foundMedia = currentData.findIndex(matchesMedia);
-
-    if (foundMedia !== -1) {
-      return currentData[foundMedia];
-    } // No media matches, select first element without a media condition
-
-
-    var noMedia = currentData.findIndex(function (image) {
-      return typeof image.media === "undefined";
-    });
-
-    if (noMedia !== -1) {
-      return currentData[noMedia];
-    }
-  } // Else return the first image.
-
-
-  return currentData[0];
-}; // Cache if we've seen an image before so we don't bother with
+ */var getCurrentSrcData=function getCurrentSrcData(currentData){if(isBrowser&&hasArtDirectionSupport(currentData)){// Do we have an image for the current Viewport?
+var foundMedia=currentData.findIndex(matchesMedia);if(foundMedia!==-1){return currentData[foundMedia];}// No media matches, select first element without a media condition
+var noMedia=currentData.findIndex(function(image){return typeof image.media==="undefined";});if(noMedia!==-1){return currentData[noMedia];}}// Else return the first image.
+return currentData[0];};// Cache if we've seen an image before so we don't bother with
 // lazy-loading & fading in on subsequent mounts.
-
-
-var imageCache = Object.create({});
-
-var inImageCache = function inImageCache(props) {
-  var convertedProps = convertProps(props); // Find src
-
-  var src = getImageSrcKey(convertedProps);
-  return imageCache[src] || false;
-};
-
-var activateCacheForImage = function activateCacheForImage(props) {
-  var convertedProps = convertProps(props); // Find src
-
-  var src = getImageSrcKey(convertedProps);
-  imageCache[src] = true;
-}; // Native lazy-loading support: https://addyosmani.com/blog/lazy-loading/
-
-
-var hasNativeLazyLoadSupport = typeof HTMLImageElement !== "undefined" && "loading" in HTMLImageElement.prototype;
-var isBrowser = typeof window !== "undefined";
-var hasIOSupport = isBrowser && window.IntersectionObserver;
-var io;
-var listeners = new WeakMap();
-
-function getIO() {
-  if (typeof io === "undefined" && typeof window !== "undefined" && window.IntersectionObserver) {
-    io = new window.IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (listeners.has(entry.target)) {
-          var cb = listeners.get(entry.target); // Edge doesn't currently support isIntersecting, so also test for an intersectionRatio > 0
-
-          if (entry.isIntersecting || entry.intersectionRatio > 0) {
-            io.unobserve(entry.target);
-            listeners.delete(entry.target);
-            cb();
-          }
-        }
-      });
-    }, {
-      rootMargin: "200px"
-    });
-  }
-
-  return io;
-}
-
-function generateImageSources(imageVariants) {
-  return imageVariants.map(function (_ref3) {
-    var src = _ref3.src,
-        srcSet = _ref3.srcSet,
-        srcSetWebp = _ref3.srcSetWebp,
-        media = _ref3.media,
-        sizes = _ref3.sizes;
-    return _react.default.createElement(_react.default.Fragment, {
-      key: src
-    }, srcSetWebp && _react.default.createElement("source", {
-      type: "image/webp",
-      media: media,
-      srcSet: srcSetWebp,
-      sizes: sizes
-    }), _react.default.createElement("source", {
-      media: media,
-      srcSet: srcSet,
-      sizes: sizes
-    }));
-  });
-} // Return an array ordered by elements having a media prop, does not use
+var imageCache=Object.create({});var inImageCache=function inImageCache(props){var convertedProps=convertProps(props);// Find src
+var src=getImageSrcKey(convertedProps);return imageCache[src]||false;};var activateCacheForImage=function activateCacheForImage(props){var convertedProps=convertProps(props);// Find src
+var src=getImageSrcKey(convertedProps);imageCache[src]=true;};// Native lazy-loading support: https://addyosmani.com/blog/lazy-loading/
+var hasNativeLazyLoadSupport=typeof HTMLImageElement!=="undefined"&&"loading"in HTMLImageElement.prototype;var isBrowser=typeof window!=="undefined";var hasIOSupport=isBrowser&&window.IntersectionObserver;var io;var listeners=new WeakMap();function getIO(){if(typeof io==="undefined"&&typeof window!=="undefined"&&window.IntersectionObserver){io=new window.IntersectionObserver(function(entries){entries.forEach(function(entry){if(listeners.has(entry.target)){var cb=listeners.get(entry.target);// Edge doesn't currently support isIntersecting, so also test for an intersectionRatio > 0
+if(entry.isIntersecting||entry.intersectionRatio>0){io.unobserve(entry.target);listeners.delete(entry.target);cb();}}});},{rootMargin:"200px"});}return io;}function generateImageSources(imageVariants){return imageVariants.map(function(_ref3){var src=_ref3.src,srcSet=_ref3.srcSet,srcSetWebp=_ref3.srcSetWebp,media=_ref3.media,sizes=_ref3.sizes;return _react.default.createElement(_react.default.Fragment,{key:src},srcSetWebp&&_react.default.createElement("source",{type:"image/webp",media:media,srcSet:srcSetWebp,sizes:sizes}),_react.default.createElement("source",{media:media,srcSet:srcSet,sizes:sizes}));});}// Return an array ordered by elements having a media prop, does not use
 // native sort, as a stable sort is not guaranteed by all browsers/versions
-
-
-function groupByMedia(imageVariants) {
-  var withMedia = [];
-  var without = [];
-  imageVariants.forEach(function (variant) {
-    return (variant.media ? withMedia : without).push(variant);
-  });
-
-  if (without.length > 1 && "development" !== "production") {
-    console.warn("We've found " + without.length + " sources without a media property. They might be ignored by the browser, see: https://www.gatsbyjs.org/packages/gatsby-image/#art-directing-multiple-images");
-  }
-
-  return [].concat(withMedia, without);
-}
-
-function generateTracedSVGSources(imageVariants) {
-  return imageVariants.map(function (_ref4) {
-    var src = _ref4.src,
-        media = _ref4.media,
-        tracedSVG = _ref4.tracedSVG;
-    return _react.default.createElement("source", {
-      key: src,
-      media: media,
-      srcSet: tracedSVG
-    });
-  });
-}
-
-function generateBase64Sources(imageVariants) {
-  return imageVariants.map(function (_ref5) {
-    var src = _ref5.src,
-        media = _ref5.media,
-        base64 = _ref5.base64;
-    return _react.default.createElement("source", {
-      key: src,
-      media: media,
-      srcSet: base64
-    });
-  });
-}
-
-function generateNoscriptSource(_ref6, isWebp) {
-  var srcSet = _ref6.srcSet,
-      srcSetWebp = _ref6.srcSetWebp,
-      media = _ref6.media,
-      sizes = _ref6.sizes;
-  var src = isWebp ? srcSetWebp : srcSet;
-  var mediaAttr = media ? "media=\"" + media + "\" " : "";
-  var typeAttr = isWebp ? "type='image/webp' " : "";
-  var sizesAttr = sizes ? "sizes=\"" + sizes + "\" " : "";
-  return "<source " + typeAttr + mediaAttr + "srcset=\"" + src + "\" " + sizesAttr + "/>";
-}
-
-function generateNoscriptSources(imageVariants) {
-  return imageVariants.map(function (variant) {
-    return (variant.srcSetWebp ? generateNoscriptSource(variant, true) : "") + generateNoscriptSource(variant);
-  }).join("");
-}
-
-var listenToIntersections = function listenToIntersections(el, cb) {
-  var observer = getIO();
-
-  if (observer) {
-    observer.observe(el);
-    listeners.set(el, cb);
-  }
-
-  return function () {
-    observer.unobserve(el);
-    listeners.delete(el);
-  };
-};
-
-var noscriptImg = function noscriptImg(props) {
-  // Check if prop exists before adding each attribute to the string output below to prevent
-  // HTML validation issues caused by empty values like width="" and height=""
-  var src = props.src ? "src=\"" + props.src + "\" " : "src=\"\" "; // required attribute
-
-  var sizes = props.sizes ? "sizes=\"" + props.sizes + "\" " : "";
-  var srcSet = props.srcSet ? "srcset=\"" + props.srcSet + "\" " : "";
-  var title = props.title ? "title=\"" + props.title + "\" " : "";
-  var alt = props.alt ? "alt=\"" + props.alt + "\" " : "alt=\"\" "; // required attribute
-
-  var width = props.width ? "width=\"" + props.width + "\" " : "";
-  var height = props.height ? "height=\"" + props.height + "\" " : "";
-  var crossOrigin = props.crossOrigin ? "crossorigin=\"" + props.crossOrigin + "\" " : "";
-  var loading = props.loading ? "loading=\"" + props.loading + "\" " : "";
-  var draggable = props.draggable ? "draggable=\"" + props.draggable + "\" " : "";
-  var sources = generateNoscriptSources(props.imageVariants);
-  return "<picture>" + sources + "<img " + loading + width + height + sizes + srcSet + src + alt + title + crossOrigin + draggable + "style=\"position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\"/></picture>";
-}; // Earlier versions of gatsby-image during the 2.x cycle did not wrap
+function groupByMedia(imageVariants){var withMedia=[];var without=[];imageVariants.forEach(function(variant){return(variant.media?withMedia:without).push(variant);});if(without.length>1&&"production"!=="production"){}return[].concat(withMedia,without);}function generateTracedSVGSources(imageVariants){return imageVariants.map(function(_ref4){var src=_ref4.src,media=_ref4.media,tracedSVG=_ref4.tracedSVG;return _react.default.createElement("source",{key:src,media:media,srcSet:tracedSVG});});}function generateBase64Sources(imageVariants){return imageVariants.map(function(_ref5){var src=_ref5.src,media=_ref5.media,base64=_ref5.base64;return _react.default.createElement("source",{key:src,media:media,srcSet:base64});});}function generateNoscriptSource(_ref6,isWebp){var srcSet=_ref6.srcSet,srcSetWebp=_ref6.srcSetWebp,media=_ref6.media,sizes=_ref6.sizes;var src=isWebp?srcSetWebp:srcSet;var mediaAttr=media?"media=\""+media+"\" ":"";var typeAttr=isWebp?"type='image/webp' ":"";var sizesAttr=sizes?"sizes=\""+sizes+"\" ":"";return"<source "+typeAttr+mediaAttr+"srcset=\""+src+"\" "+sizesAttr+"/>";}function generateNoscriptSources(imageVariants){return imageVariants.map(function(variant){return(variant.srcSetWebp?generateNoscriptSource(variant,true):"")+generateNoscriptSource(variant);}).join("");}var listenToIntersections=function listenToIntersections(el,cb){var observer=getIO();if(observer){observer.observe(el);listeners.set(el,cb);}return function(){observer.unobserve(el);listeners.delete(el);};};var noscriptImg=function noscriptImg(props){// Check if prop exists before adding each attribute to the string output below to prevent
+// HTML validation issues caused by empty values like width="" and height=""
+var src=props.src?"src=\""+props.src+"\" ":"src=\"\" ";// required attribute
+var sizes=props.sizes?"sizes=\""+props.sizes+"\" ":"";var srcSet=props.srcSet?"srcset=\""+props.srcSet+"\" ":"";var title=props.title?"title=\""+props.title+"\" ":"";var alt=props.alt?"alt=\""+props.alt+"\" ":"alt=\"\" ";// required attribute
+var width=props.width?"width=\""+props.width+"\" ":"";var height=props.height?"height=\""+props.height+"\" ":"";var crossOrigin=props.crossOrigin?"crossorigin=\""+props.crossOrigin+"\" ":"";var loading=props.loading?"loading=\""+props.loading+"\" ":"";var draggable=props.draggable?"draggable=\""+props.draggable+"\" ":"";var sources=generateNoscriptSources(props.imageVariants);return"<picture>"+sources+"<img "+loading+width+height+sizes+srcSet+src+alt+title+crossOrigin+draggable+"style=\"position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\"/></picture>";};// Earlier versions of gatsby-image during the 2.x cycle did not wrap
 // the `Img` component in a `picture` element. This maintains compatibility
 // until a breaking change can be introduced in the next major release
-
-
-var Placeholder = _react.default.forwardRef(function (props, ref) {
-  var src = props.src,
-      imageVariants = props.imageVariants,
-      generateSources = props.generateSources,
-      spreadProps = props.spreadProps,
-      ariaHidden = props.ariaHidden;
-
-  var baseImage = _react.default.createElement(Img, (0, _extends2.default)({
-    ref: ref,
-    src: src
-  }, spreadProps, {
-    ariaHidden: ariaHidden
-  }));
-
-  return imageVariants.length > 1 ? _react.default.createElement("picture", null, generateSources(imageVariants), baseImage) : baseImage;
-});
-
-var Img = _react.default.forwardRef(function (props, ref) {
-  var sizes = props.sizes,
-      srcSet = props.srcSet,
-      src = props.src,
-      style = props.style,
-      onLoad = props.onLoad,
-      onError = props.onError,
-      loading = props.loading,
-      draggable = props.draggable,
-      ariaHidden = props.ariaHidden,
-      otherProps = (0, _objectWithoutPropertiesLoose2.default)(props, ["sizes", "srcSet", "src", "style", "onLoad", "onError", "loading", "draggable", "ariaHidden"]);
-  return _react.default.createElement("img", (0, _extends2.default)({
-    "aria-hidden": ariaHidden,
-    sizes: sizes,
-    srcSet: srcSet,
-    src: src
-  }, otherProps, {
-    onLoad: onLoad,
-    onError: onError,
-    ref: ref,
-    loading: loading,
-    draggable: draggable,
-    style: (0, _extends2.default)({
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      objectPosition: "center"
-    }, style)
-  }));
-});
-
-Img.propTypes = {
-  style: _propTypes.default.object,
-  onError: _propTypes.default.func,
-  onLoad: _propTypes.default.func
-};
-
-var Image = /*#__PURE__*/function (_React$Component) {
-  (0, _inheritsLoose2.default)(Image, _React$Component);
-
-  function Image(props) {
-    var _this;
-
-    _this = _React$Component.call(this, props) || this; // If this image has already been loaded before then we can assume it's
-    // already in the browser cache so it's cheap to just show directly.
-
-    _this.seenBefore = isBrowser && inImageCache(props);
-    _this.isCritical = props.loading === "eager" || props.critical;
-    _this.addNoScript = !(_this.isCritical && !props.fadeIn);
-    _this.useIOSupport = !hasNativeLazyLoadSupport && hasIOSupport && !_this.isCritical && !_this.seenBefore;
-    var isVisible = _this.isCritical || isBrowser && (hasNativeLazyLoadSupport || !_this.useIOSupport);
-    _this.state = {
-      isVisible: isVisible,
-      imgLoaded: false,
-      imgCached: false,
-      fadeIn: !_this.seenBefore && props.fadeIn
-    };
-    _this.imageRef = _react.default.createRef();
-    _this.placeholderRef = props.placeholderRef || _react.default.createRef();
-    _this.handleImageLoaded = _this.handleImageLoaded.bind((0, _assertThisInitialized2.default)(_this));
-    _this.handleRef = _this.handleRef.bind((0, _assertThisInitialized2.default)(_this));
-    return _this;
-  }
-
-  var _proto = Image.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    if (this.state.isVisible && typeof this.props.onStartLoad === "function") {
-      this.props.onStartLoad({
-        wasCached: inImageCache(this.props)
-      });
-    }
-
-    if (this.isCritical) {
-      var img = this.imageRef.current;
-
-      if (img && img.complete) {
-        this.handleImageLoaded();
-      }
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.cleanUpListeners) {
-      this.cleanUpListeners();
-    }
-  } // Specific to IntersectionObserver based lazy-load support
-  ;
-
-  _proto.handleRef = function handleRef(ref) {
-    var _this2 = this;
-
-    if (this.useIOSupport && ref) {
-      this.cleanUpListeners = listenToIntersections(ref, function () {
-        var imageInCache = inImageCache(_this2.props);
-
-        if (!_this2.state.isVisible && typeof _this2.props.onStartLoad === "function") {
-          _this2.props.onStartLoad({
-            wasCached: imageInCache
-          });
-        } // imgCached and imgLoaded must update after isVisible,
-        // Once isVisible is true, imageRef becomes accessible, which imgCached needs access to.
-        // imgLoaded and imgCached are in a 2nd setState call to be changed together,
-        // avoiding initiating unnecessary animation frames from style changes.
-
-
-        _this2.setState({
-          isVisible: true
-        }, function () {
-          _this2.setState({
-            imgLoaded: imageInCache,
-            // `currentSrc` should be a string, but can be `undefined` in IE,
-            // !! operator validates the value is not undefined/null/""
-            // for lazyloaded components this might be null
-            // TODO fix imgCached behaviour as it's now false when it's lazyloaded
-            imgCached: !!(_this2.imageRef.current && _this2.imageRef.current.currentSrc)
-          });
-        });
-      });
-    }
-  };
-
-  _proto.handleImageLoaded = function handleImageLoaded() {
-    activateCacheForImage(this.props);
-    this.setState({
-      imgLoaded: true
-    });
-
-    if (this.props.onLoad) {
-      this.props.onLoad();
-    }
-  };
-
-  _proto.render = function render() {
-    var _convertProps = convertProps(this.props),
-        title = _convertProps.title,
-        alt = _convertProps.alt,
-        className = _convertProps.className,
-        _convertProps$style = _convertProps.style,
-        style = _convertProps$style === void 0 ? {} : _convertProps$style,
-        _convertProps$imgStyl = _convertProps.imgStyle,
-        imgStyle = _convertProps$imgStyl === void 0 ? {} : _convertProps$imgStyl,
-        _convertProps$placeho = _convertProps.placeholderStyle,
-        placeholderStyle = _convertProps$placeho === void 0 ? {} : _convertProps$placeho,
-        placeholderClassName = _convertProps.placeholderClassName,
-        fluid = _convertProps.fluid,
-        fixed = _convertProps.fixed,
-        backgroundColor = _convertProps.backgroundColor,
-        durationFadeIn = _convertProps.durationFadeIn,
-        Tag = _convertProps.Tag,
-        itemProp = _convertProps.itemProp,
-        loading = _convertProps.loading,
-        draggable = _convertProps.draggable;
-
-    var shouldReveal = this.state.fadeIn === false || this.state.imgLoaded;
-    var shouldFadeIn = this.state.fadeIn === true && !this.state.imgCached;
-    var imageStyle = (0, _extends2.default)({
-      opacity: shouldReveal ? 1 : 0,
-      transition: shouldFadeIn ? "opacity " + durationFadeIn + "ms" : "none"
-    }, imgStyle);
-    var bgColor = typeof backgroundColor === "boolean" ? "lightgray" : backgroundColor;
-    var delayHideStyle = {
-      transitionDelay: durationFadeIn + "ms"
-    };
-    var imagePlaceholderStyle = (0, _extends2.default)({
-      opacity: this.state.imgLoaded ? 0 : 1
-    }, shouldFadeIn && delayHideStyle, {}, imgStyle, {}, placeholderStyle);
-    var placeholderImageProps = {
-      title: title,
-      alt: !this.state.isVisible ? alt : "",
-      style: imagePlaceholderStyle,
-      className: placeholderClassName,
-      itemProp: itemProp
-    };
-
-    if (fluid) {
-      var imageVariants = fluid;
-      var image = getCurrentSrcData(fluid);
-      return _react.default.createElement(Tag, {
-        className: (className ? className : "") + " gatsby-image-wrapper",
-        style: (0, _extends2.default)({
-          position: "relative",
-          overflow: "hidden"
-        }, style),
-        ref: this.handleRef,
-        key: "fluid-" + JSON.stringify(image.srcSet)
-      }, _react.default.createElement(Tag, {
-        "aria-hidden": true,
-        style: {
-          width: "100%",
-          paddingBottom: 100 / image.aspectRatio + "%"
-        }
-      }), bgColor && _react.default.createElement(Tag, {
-        "aria-hidden": true,
-        title: title,
-        style: (0, _extends2.default)({
-          backgroundColor: bgColor,
-          position: "absolute",
-          top: 0,
-          bottom: 0,
-          opacity: !this.state.imgLoaded ? 1 : 0,
-          right: 0,
-          left: 0
-        }, shouldFadeIn && delayHideStyle)
-      }), image.base64 && _react.default.createElement(Placeholder, {
-        ariaHidden: true,
-        ref: this.placeholderRef,
-        src: image.base64,
-        spreadProps: placeholderImageProps,
-        imageVariants: imageVariants,
-        generateSources: generateBase64Sources
-      }), image.tracedSVG && _react.default.createElement(Placeholder, {
-        ariaHidden: true,
-        ref: this.placeholderRef,
-        src: image.tracedSVG,
-        spreadProps: placeholderImageProps,
-        imageVariants: imageVariants,
-        generateSources: generateTracedSVGSources
-      }), this.state.isVisible && _react.default.createElement("picture", null, generateImageSources(imageVariants), _react.default.createElement(Img, {
-        alt: alt,
-        title: title,
-        sizes: image.sizes,
-        src: image.src,
-        crossOrigin: this.props.crossOrigin,
-        srcSet: image.srcSet,
-        style: imageStyle,
-        ref: this.imageRef,
-        onLoad: this.handleImageLoaded,
-        onError: this.props.onError,
-        itemProp: itemProp,
-        loading: loading,
-        draggable: draggable
-      })), this.addNoScript && _react.default.createElement("noscript", {
-        dangerouslySetInnerHTML: {
-          __html: noscriptImg((0, _extends2.default)({
-            alt: alt,
-            title: title,
-            loading: loading
-          }, image, {
-            imageVariants: imageVariants
-          }))
-        }
-      }));
-    }
-
-    if (fixed) {
-      var _imageVariants = fixed;
-
-      var _image = getCurrentSrcData(fixed);
-
-      var divStyle = (0, _extends2.default)({
-        position: "relative",
-        overflow: "hidden",
-        display: "inline-block",
-        width: _image.width,
-        height: _image.height
-      }, style);
-
-      if (style.display === "inherit") {
-        delete divStyle.display;
-      }
-
-      return _react.default.createElement(Tag, {
-        className: (className ? className : "") + " gatsby-image-wrapper",
-        style: divStyle,
-        ref: this.handleRef,
-        key: "fixed-" + JSON.stringify(_image.srcSet)
-      }, bgColor && _react.default.createElement(Tag, {
-        "aria-hidden": true,
-        title: title,
-        style: (0, _extends2.default)({
-          backgroundColor: bgColor,
-          width: _image.width,
-          opacity: !this.state.imgLoaded ? 1 : 0,
-          height: _image.height
-        }, shouldFadeIn && delayHideStyle)
-      }), _image.base64 && _react.default.createElement(Placeholder, {
-        ariaHidden: true,
-        ref: this.placeholderRef,
-        src: _image.base64,
-        spreadProps: placeholderImageProps,
-        imageVariants: _imageVariants,
-        generateSources: generateBase64Sources
-      }), _image.tracedSVG && _react.default.createElement(Placeholder, {
-        ariaHidden: true,
-        ref: this.placeholderRef,
-        src: _image.tracedSVG,
-        spreadProps: placeholderImageProps,
-        imageVariants: _imageVariants,
-        generateSources: generateTracedSVGSources
-      }), this.state.isVisible && _react.default.createElement("picture", null, generateImageSources(_imageVariants), _react.default.createElement(Img, {
-        alt: alt,
-        title: title,
-        width: _image.width,
-        height: _image.height,
-        sizes: _image.sizes,
-        src: _image.src,
-        crossOrigin: this.props.crossOrigin,
-        srcSet: _image.srcSet,
-        style: imageStyle,
-        ref: this.imageRef,
-        onLoad: this.handleImageLoaded,
-        onError: this.props.onError,
-        itemProp: itemProp,
-        loading: loading,
-        draggable: draggable
-      })), this.addNoScript && _react.default.createElement("noscript", {
-        dangerouslySetInnerHTML: {
-          __html: noscriptImg((0, _extends2.default)({
-            alt: alt,
-            title: title,
-            loading: loading
-          }, _image, {
-            imageVariants: _imageVariants
-          }))
-        }
-      }));
-    }
-
-    return null;
-  };
-
-  return Image;
-}(_react.default.Component);
-
-Image.defaultProps = {
-  fadeIn: true,
-  durationFadeIn: 500,
-  alt: "",
-  Tag: "div",
-  // We set it to `lazy` by default because it's best to default to a performant
-  // setting and let the user "opt out" to `eager`
-  loading: "lazy"
-};
-
-var fixedObject = _propTypes.default.shape({
-  width: _propTypes.default.number.isRequired,
-  height: _propTypes.default.number.isRequired,
-  src: _propTypes.default.string.isRequired,
-  srcSet: _propTypes.default.string.isRequired,
-  base64: _propTypes.default.string,
-  tracedSVG: _propTypes.default.string,
-  srcWebp: _propTypes.default.string,
-  srcSetWebp: _propTypes.default.string,
-  media: _propTypes.default.string
-});
-
-var fluidObject = _propTypes.default.shape({
-  aspectRatio: _propTypes.default.number.isRequired,
-  src: _propTypes.default.string.isRequired,
-  srcSet: _propTypes.default.string.isRequired,
-  sizes: _propTypes.default.string.isRequired,
-  base64: _propTypes.default.string,
-  tracedSVG: _propTypes.default.string,
-  srcWebp: _propTypes.default.string,
-  srcSetWebp: _propTypes.default.string,
-  media: _propTypes.default.string
-}); // If you modify these propTypes, please don't forget to update following files as well:
+var Placeholder=_react.default.forwardRef(function(props,ref){var src=props.src,imageVariants=props.imageVariants,generateSources=props.generateSources,spreadProps=props.spreadProps,ariaHidden=props.ariaHidden;var baseImage=_react.default.createElement(Img,(0,_extends2.default)({ref:ref,src:src},spreadProps,{ariaHidden:ariaHidden}));return imageVariants.length>1?_react.default.createElement("picture",null,generateSources(imageVariants),baseImage):baseImage;});var Img=_react.default.forwardRef(function(props,ref){var sizes=props.sizes,srcSet=props.srcSet,src=props.src,style=props.style,onLoad=props.onLoad,onError=props.onError,loading=props.loading,draggable=props.draggable,ariaHidden=props.ariaHidden,otherProps=(0,_objectWithoutPropertiesLoose2.default)(props,["sizes","srcSet","src","style","onLoad","onError","loading","draggable","ariaHidden"]);return _react.default.createElement("img",(0,_extends2.default)({"aria-hidden":ariaHidden,sizes:sizes,srcSet:srcSet,src:src},otherProps,{onLoad:onLoad,onError:onError,ref:ref,loading:loading,draggable:draggable,style:(0,_extends2.default)({position:"absolute",top:0,left:0,width:"100%",height:"100%",objectFit:"cover",objectPosition:"center"},style)}));});Img.propTypes={style:_propTypes.default.object,onError:_propTypes.default.func,onLoad:_propTypes.default.func};var Image=/*#__PURE__*/function(_React$Component){(0,_inheritsLoose2.default)(Image,_React$Component);function Image(props){var _this;_this=_React$Component.call(this,props)||this;// If this image has already been loaded before then we can assume it's
+// already in the browser cache so it's cheap to just show directly.
+_this.seenBefore=isBrowser&&inImageCache(props);_this.isCritical=props.loading==="eager"||props.critical;_this.addNoScript=!(_this.isCritical&&!props.fadeIn);_this.useIOSupport=!hasNativeLazyLoadSupport&&hasIOSupport&&!_this.isCritical&&!_this.seenBefore;var isVisible=_this.isCritical||isBrowser&&(hasNativeLazyLoadSupport||!_this.useIOSupport);_this.state={isVisible:isVisible,imgLoaded:false,imgCached:false,fadeIn:!_this.seenBefore&&props.fadeIn};_this.imageRef=_react.default.createRef();_this.placeholderRef=props.placeholderRef||_react.default.createRef();_this.handleImageLoaded=_this.handleImageLoaded.bind((0,_assertThisInitialized2.default)(_this));_this.handleRef=_this.handleRef.bind((0,_assertThisInitialized2.default)(_this));return _this;}var _proto=Image.prototype;_proto.componentDidMount=function componentDidMount(){if(this.state.isVisible&&typeof this.props.onStartLoad==="function"){this.props.onStartLoad({wasCached:inImageCache(this.props)});}if(this.isCritical){var img=this.imageRef.current;if(img&&img.complete){this.handleImageLoaded();}}};_proto.componentWillUnmount=function componentWillUnmount(){if(this.cleanUpListeners){this.cleanUpListeners();}}// Specific to IntersectionObserver based lazy-load support
+;_proto.handleRef=function handleRef(ref){var _this2=this;if(this.useIOSupport&&ref){this.cleanUpListeners=listenToIntersections(ref,function(){var imageInCache=inImageCache(_this2.props);if(!_this2.state.isVisible&&typeof _this2.props.onStartLoad==="function"){_this2.props.onStartLoad({wasCached:imageInCache});}// imgCached and imgLoaded must update after isVisible,
+// Once isVisible is true, imageRef becomes accessible, which imgCached needs access to.
+// imgLoaded and imgCached are in a 2nd setState call to be changed together,
+// avoiding initiating unnecessary animation frames from style changes.
+_this2.setState({isVisible:true},function(){_this2.setState({imgLoaded:imageInCache,// `currentSrc` should be a string, but can be `undefined` in IE,
+// !! operator validates the value is not undefined/null/""
+// for lazyloaded components this might be null
+// TODO fix imgCached behaviour as it's now false when it's lazyloaded
+imgCached:!!(_this2.imageRef.current&&_this2.imageRef.current.currentSrc)});});});}};_proto.handleImageLoaded=function handleImageLoaded(){activateCacheForImage(this.props);this.setState({imgLoaded:true});if(this.props.onLoad){this.props.onLoad();}};_proto.render=function render(){var _convertProps=convertProps(this.props),title=_convertProps.title,alt=_convertProps.alt,className=_convertProps.className,_convertProps$style=_convertProps.style,style=_convertProps$style===void 0?{}:_convertProps$style,_convertProps$imgStyl=_convertProps.imgStyle,imgStyle=_convertProps$imgStyl===void 0?{}:_convertProps$imgStyl,_convertProps$placeho=_convertProps.placeholderStyle,placeholderStyle=_convertProps$placeho===void 0?{}:_convertProps$placeho,placeholderClassName=_convertProps.placeholderClassName,fluid=_convertProps.fluid,fixed=_convertProps.fixed,backgroundColor=_convertProps.backgroundColor,durationFadeIn=_convertProps.durationFadeIn,Tag=_convertProps.Tag,itemProp=_convertProps.itemProp,loading=_convertProps.loading,draggable=_convertProps.draggable;var shouldReveal=this.state.fadeIn===false||this.state.imgLoaded;var shouldFadeIn=this.state.fadeIn===true&&!this.state.imgCached;var imageStyle=(0,_extends2.default)({opacity:shouldReveal?1:0,transition:shouldFadeIn?"opacity "+durationFadeIn+"ms":"none"},imgStyle);var bgColor=typeof backgroundColor==="boolean"?"lightgray":backgroundColor;var delayHideStyle={transitionDelay:durationFadeIn+"ms"};var imagePlaceholderStyle=(0,_extends2.default)({opacity:this.state.imgLoaded?0:1},shouldFadeIn&&delayHideStyle,{},imgStyle,{},placeholderStyle);var placeholderImageProps={title:title,alt:!this.state.isVisible?alt:"",style:imagePlaceholderStyle,className:placeholderClassName,itemProp:itemProp};if(fluid){var imageVariants=fluid;var image=getCurrentSrcData(fluid);return _react.default.createElement(Tag,{className:(className?className:"")+" gatsby-image-wrapper",style:(0,_extends2.default)({position:"relative",overflow:"hidden"},style),ref:this.handleRef,key:"fluid-"+JSON.stringify(image.srcSet)},_react.default.createElement(Tag,{"aria-hidden":true,style:{width:"100%",paddingBottom:100/image.aspectRatio+"%"}}),bgColor&&_react.default.createElement(Tag,{"aria-hidden":true,title:title,style:(0,_extends2.default)({backgroundColor:bgColor,position:"absolute",top:0,bottom:0,opacity:!this.state.imgLoaded?1:0,right:0,left:0},shouldFadeIn&&delayHideStyle)}),image.base64&&_react.default.createElement(Placeholder,{ariaHidden:true,ref:this.placeholderRef,src:image.base64,spreadProps:placeholderImageProps,imageVariants:imageVariants,generateSources:generateBase64Sources}),image.tracedSVG&&_react.default.createElement(Placeholder,{ariaHidden:true,ref:this.placeholderRef,src:image.tracedSVG,spreadProps:placeholderImageProps,imageVariants:imageVariants,generateSources:generateTracedSVGSources}),this.state.isVisible&&_react.default.createElement("picture",null,generateImageSources(imageVariants),_react.default.createElement(Img,{alt:alt,title:title,sizes:image.sizes,src:image.src,crossOrigin:this.props.crossOrigin,srcSet:image.srcSet,style:imageStyle,ref:this.imageRef,onLoad:this.handleImageLoaded,onError:this.props.onError,itemProp:itemProp,loading:loading,draggable:draggable})),this.addNoScript&&_react.default.createElement("noscript",{dangerouslySetInnerHTML:{__html:noscriptImg((0,_extends2.default)({alt:alt,title:title,loading:loading},image,{imageVariants:imageVariants}))}}));}if(fixed){var _imageVariants=fixed;var _image=getCurrentSrcData(fixed);var divStyle=(0,_extends2.default)({position:"relative",overflow:"hidden",display:"inline-block",width:_image.width,height:_image.height},style);if(style.display==="inherit"){delete divStyle.display;}return _react.default.createElement(Tag,{className:(className?className:"")+" gatsby-image-wrapper",style:divStyle,ref:this.handleRef,key:"fixed-"+JSON.stringify(_image.srcSet)},bgColor&&_react.default.createElement(Tag,{"aria-hidden":true,title:title,style:(0,_extends2.default)({backgroundColor:bgColor,width:_image.width,opacity:!this.state.imgLoaded?1:0,height:_image.height},shouldFadeIn&&delayHideStyle)}),_image.base64&&_react.default.createElement(Placeholder,{ariaHidden:true,ref:this.placeholderRef,src:_image.base64,spreadProps:placeholderImageProps,imageVariants:_imageVariants,generateSources:generateBase64Sources}),_image.tracedSVG&&_react.default.createElement(Placeholder,{ariaHidden:true,ref:this.placeholderRef,src:_image.tracedSVG,spreadProps:placeholderImageProps,imageVariants:_imageVariants,generateSources:generateTracedSVGSources}),this.state.isVisible&&_react.default.createElement("picture",null,generateImageSources(_imageVariants),_react.default.createElement(Img,{alt:alt,title:title,width:_image.width,height:_image.height,sizes:_image.sizes,src:_image.src,crossOrigin:this.props.crossOrigin,srcSet:_image.srcSet,style:imageStyle,ref:this.imageRef,onLoad:this.handleImageLoaded,onError:this.props.onError,itemProp:itemProp,loading:loading,draggable:draggable})),this.addNoScript&&_react.default.createElement("noscript",{dangerouslySetInnerHTML:{__html:noscriptImg((0,_extends2.default)({alt:alt,title:title,loading:loading},_image,{imageVariants:_imageVariants}))}}));}return null;};return Image;}(_react.default.Component);Image.defaultProps={fadeIn:true,durationFadeIn:500,alt:"",Tag:"div",// We set it to `lazy` by default because it's best to default to a performant
+// setting and let the user "opt out" to `eager`
+loading:"lazy"};var fixedObject=_propTypes.default.shape({width:_propTypes.default.number.isRequired,height:_propTypes.default.number.isRequired,src:_propTypes.default.string.isRequired,srcSet:_propTypes.default.string.isRequired,base64:_propTypes.default.string,tracedSVG:_propTypes.default.string,srcWebp:_propTypes.default.string,srcSetWebp:_propTypes.default.string,media:_propTypes.default.string});var fluidObject=_propTypes.default.shape({aspectRatio:_propTypes.default.number.isRequired,src:_propTypes.default.string.isRequired,srcSet:_propTypes.default.string.isRequired,sizes:_propTypes.default.string.isRequired,base64:_propTypes.default.string,tracedSVG:_propTypes.default.string,srcWebp:_propTypes.default.string,srcSetWebp:_propTypes.default.string,media:_propTypes.default.string});// If you modify these propTypes, please don't forget to update following files as well:
 // https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-image/index.d.ts
 // https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-image/README.md#gatsby-image-props
 // https://github.com/gatsbyjs/gatsby/blob/master/docs/docs/gatsby-image.md#gatsby-image-props
-
-
-Image.propTypes = {
-  resolutions: fixedObject,
-  sizes: fluidObject,
-  fixed: _propTypes.default.oneOfType([fixedObject, _propTypes.default.arrayOf(fixedObject)]),
-  fluid: _propTypes.default.oneOfType([fluidObject, _propTypes.default.arrayOf(fluidObject)]),
-  fadeIn: _propTypes.default.bool,
-  durationFadeIn: _propTypes.default.number,
-  title: _propTypes.default.string,
-  alt: _propTypes.default.string,
-  className: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.object]),
-  // Support Glamor's css prop.
-  critical: _propTypes.default.bool,
-  crossOrigin: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.bool]),
-  style: _propTypes.default.object,
-  imgStyle: _propTypes.default.object,
-  placeholderStyle: _propTypes.default.object,
-  placeholderClassName: _propTypes.default.string,
-  backgroundColor: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.bool]),
-  onLoad: _propTypes.default.func,
-  onError: _propTypes.default.func,
-  onStartLoad: _propTypes.default.func,
-  Tag: _propTypes.default.string,
-  itemProp: _propTypes.default.string,
-  loading: _propTypes.default.oneOf(["auto", "lazy", "eager"]),
-  draggable: _propTypes.default.bool
-};
-var _default = Image;
-exports["default"] = _default;
+Image.propTypes={resolutions:fixedObject,sizes:fluidObject,fixed:_propTypes.default.oneOfType([fixedObject,_propTypes.default.arrayOf(fixedObject)]),fluid:_propTypes.default.oneOfType([fluidObject,_propTypes.default.arrayOf(fluidObject)]),fadeIn:_propTypes.default.bool,durationFadeIn:_propTypes.default.number,title:_propTypes.default.string,alt:_propTypes.default.string,className:_propTypes.default.oneOfType([_propTypes.default.string,_propTypes.default.object]),// Support Glamor's css prop.
+critical:_propTypes.default.bool,crossOrigin:_propTypes.default.oneOfType([_propTypes.default.string,_propTypes.default.bool]),style:_propTypes.default.object,imgStyle:_propTypes.default.object,placeholderStyle:_propTypes.default.object,placeholderClassName:_propTypes.default.string,backgroundColor:_propTypes.default.oneOfType([_propTypes.default.string,_propTypes.default.bool]),onLoad:_propTypes.default.func,onError:_propTypes.default.func,onStartLoad:_propTypes.default.func,Tag:_propTypes.default.string,itemProp:_propTypes.default.string,loading:_propTypes.default.oneOf(["auto","lazy","eager"]),draggable:_propTypes.default.bool};var _default=Image;exports.Z=_default;
 
 /***/ }),
 
-/***/ "./src/components/Footer.js":
-/*!**********************************!*\
-  !*** ./src/components/Footer.js ***!
-  \**********************************/
+/***/ 4403:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Footer)
+/* harmony export */   "Z": () => (/* binding */ PostListing)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8447);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
-/* harmony import */ var _content_thumbnails_facebook_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../content/thumbnails/facebook.png */ "./content/thumbnails/facebook.png");
-/* harmony import */ var _content_thumbnails_gatsby_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../content/thumbnails/gatsby.png */ "./content/thumbnails/gatsby.png");
-/* harmony import */ var _content_thumbnails_instagram_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../content/thumbnails/instagram.png */ "./content/thumbnails/instagram.png");
-
-
-
-
-
-class Footer extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
-  render() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("footer", {
-      className: "footer container"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-      href: "https://gatsbyjs.org",
-      target: "_blank",
-      rel: "noopener noreferrer"
-    }, "Build with Gatsby JS + AWS Amplify")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-      href: "https://instagram.com/khulafaurrr",
-      title: "Instagram"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-      src: _content_thumbnails_instagram_png__WEBPACK_IMPORTED_MODULE_4__["default"],
-      target: "_blank",
-      rel: "noopener noreferrer",
-      className: "footer-img",
-      alt: "Instagram"
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-      href: "https://gatsbyjs.org",
-      title: "By Gatsby JS"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-      src: _content_thumbnails_gatsby_png__WEBPACK_IMPORTED_MODULE_3__["default"],
-      target: "_blank",
-      rel: "noopener noreferrer",
-      className: "footer-img",
-      alt: "Gatsby JS"
-    }))));
-  }
-
-}
-
-/***/ }),
-
-/***/ "./src/components/Navigation.js":
-/*!**************************************!*\
-  !*** ./src/components/Navigation.js ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Navigation)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
-/* harmony import */ var _images_floppy_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../images/floppy.png */ "./src/images/floppy.png");
-/* harmony import */ var _images_sun_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../images/sun.svg */ "./src/images/sun.svg");
-/* harmony import */ var _images_moon_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../images/moon.svg */ "./src/images/moon.svg");
-/* harmony import */ var _context_ThemeContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../context/ThemeContext */ "./src/context/ThemeContext.js");
-
-
-
-
-
-
-class Navigation extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
-  constructor(...args) {
-    super(...args);
-    this.state = {
-      scrolled: false
-    };
-
-    this.navOnScroll = () => {
-      if (window.scrollY > 20) {
-        this.setState({
-          scrolled: true
-        });
-      } else {
-        this.setState({
-          scrolled: false
-        });
-      }
-    };
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.navOnScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.navOnScroll);
-  }
-
-  render() {
-    const {
-      scrolled
-    } = this.state;
-    const {
-      menuLinks
-    } = this.props;
-    const theme = this.context;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
-      className: scrolled ? 'nav scroll' : 'nav'
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "nav-container"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "brand"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
-      to: "/"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-      src: _images_floppy_png__WEBPACK_IMPORTED_MODULE_2__["default"],
-      className: "favicon",
-      alt: "Floppy Diskette"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-      className: "text"
-    }, "Khulafaur Rasyidin"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "links"
-    }, menuLinks.map(link => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
-      key: link.name,
-      to: link.link,
-      activeClassName: "active"
-    }, link.name))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "cta"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-      className: "dark-switcher",
-      onClick: theme.toggleDark,
-      "aria-label": "Toggle Dark Mode.",
-      title: "Toggle Dark Mode"
-    }, theme.dark ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-      src: _images_sun_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
-      className: "theme-icon",
-      alt: "Light Mode"
-    }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-      src: _images_moon_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
-      className: "theme-icon",
-      alt: "Dark Mode"
-    })))));
-  }
-
-}
-Navigation.contextType = _context_ThemeContext__WEBPACK_IMPORTED_MODULE_5__["default"];
-
-/***/ }),
-
-/***/ "./src/components/PostListing.js":
-/*!***************************************!*\
-  !*** ./src/components/PostListing.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ PostListing)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
-/* harmony import */ var gatsby_image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gatsby-image */ "./node_modules/gatsby-image/index.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7533);
+/* harmony import */ var gatsby_image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6162);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(381);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _utils_global__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/global */ "./src/utils/global.js");
-
-
-
-
-
-class PostListing extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
-  getPostList() {
-    const {
-      postEdges
-    } = this.props;
-    const postList = postEdges.map(postEdge => {
-      return {
-        path: postEdge.node.fields.slug,
-        tags: postEdge.node.frontmatter.tags,
-        thumbnail: postEdge.node.frontmatter.thumbnail,
-        title: postEdge.node.frontmatter.title,
-        date: postEdge.node.fields.date,
-        excerpt: postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead,
-        categories: postEdge.node.frontmatter.categories
-      };
-    });
-    return postList;
-  }
-
-  render() {
-    const {
-      simple
-    } = this.props;
-    const postList = this.getPostList();
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
-      className: `posts ${simple ? 'simple' : ''}`
-    }, postList.map(post => {
-      let thumbnail;
-
-      if (post.thumbnail) {
-        thumbnail = post.thumbnail.childImageSharp.fixed;
-      }
-
-      const popular = post.categories.includes('Popular');
-      const date = (0,_utils_global__WEBPACK_IMPORTED_MODULE_4__.formatDate)(post.date);
-      const newest = moment__WEBPACK_IMPORTED_MODULE_3___default()(post.date) > moment__WEBPACK_IMPORTED_MODULE_3___default()().subtract(1, 'months');
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
-        to: post.path,
-        key: post.title
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "each"
-      }, thumbnail ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_image__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        fixed: thumbnail
-      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "each-list-item"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, post.title), !simple && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "datetime"
-      }, date)), newest && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "alert"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "new"
-      }, "New!")), popular && !simple && !newest && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "alert"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "popular"
-      }, "Popular"))));
-    }));
-  }
-
-}
+/* harmony import */ var _utils_global__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(838);
+class PostListing extends react__WEBPACK_IMPORTED_MODULE_0__.Component{getPostList(){const{postEdges}=this.props;const postList=postEdges.map(postEdge=>{return{path:postEdge.node.fields.slug,tags:postEdge.node.frontmatter.tags,thumbnail:postEdge.node.frontmatter.thumbnail,title:postEdge.node.frontmatter.title,date:postEdge.node.fields.date,excerpt:postEdge.node.excerpt,timeToRead:postEdge.node.timeToRead,categories:postEdge.node.frontmatter.categories};});return postList;}render(){const{simple}=this.props;const postList=this.getPostList();return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section",{className:`posts ${simple?'simple':''}`},postList.map(post=>{let thumbnail;if(post.thumbnail){thumbnail=post.thumbnail.childImageSharp.fixed;}const popular=post.categories.includes('Popular');const date=(0,_utils_global__WEBPACK_IMPORTED_MODULE_4__/* .formatDate */ .p)(post.date);const newest=moment__WEBPACK_IMPORTED_MODULE_3___default()(post.date)>moment__WEBPACK_IMPORTED_MODULE_3___default()().subtract(1,'months');return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link,{to:post.path,key:post.title},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div",{className:"each"},thumbnail?/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_image__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z,{fixed:thumbnail}):/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div",null),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div",{className:"each-list-item"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2",null,post.title),!simple&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div",{className:"datetime"},date)),newest&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div",{className:"alert"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div",{className:"new"},"New!")),popular&&!simple&&!newest&&/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div",{className:"alert"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div",{className:"popular"},"Popular"))));}));}}
 
 /***/ }),
 
-/***/ "./src/context/ThemeContext.js":
-/*!*************************************!*\
-  !*** ./src/context/ThemeContext.js ***!
-  \*************************************/
+/***/ 1278:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ThemeProvider": () => (/* binding */ ThemeProvider),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* unused harmony export ThemeProvider */
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8447);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-const defaultState = {
-  dark: false,
-  notFound: false,
-  toggleDark: () => {}
-};
-const ThemeContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createContext(defaultState);
-
-class ThemeProvider extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
-  constructor(...args) {
-    super(...args);
-    this.state = {
-      dark: false,
-      notFound: false
-    };
-
-    this.toggleDark = () => {
-      this.setState(prevState => ({
-        dark: !prevState.dark
-      }));
-    };
-
-    this.setNotFound = () => {
-      this.setState({
-        notFound: true
-      });
-    };
-
-    this.setFound = () => {
-      this.setState({
-        notFound: false
-      });
-    };
-  }
-
-  componentDidMount() {
-    const lsDark = JSON.parse(localStorage.getItem('dark'));
-
-    if (lsDark) {
-      this.setState({
-        dark: lsDark
-      });
-    }
-  }
-
-  componentDidUpdate(prevState) {
-    const {
-      dark
-    } = this.state;
-
-    if (prevState.dark !== dark) {
-      localStorage.setItem('dark', JSON.stringify(dark));
-    }
-  }
-
-  render() {
-    const {
-      children
-    } = this.props;
-    const {
-      dark,
-      notFound
-    } = this.state;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ThemeContext.Provider, {
-      value: {
-        dark,
-        notFound,
-        setFound: this.setFound,
-        setNotFound: this.setNotFound,
-        toggleDark: this.toggleDark
-      }
-    }, children);
-  }
-
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ThemeContext);
-
+const defaultState={dark:false,notFound:false,toggleDark:()=>{}};const ThemeContext=/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createContext(defaultState);class ThemeProvider extends (/* unused pure expression or super */ null && (Component)){constructor(...args){super(...args);this.state={dark:false,notFound:false};this.toggleDark=()=>{this.setState(prevState=>({dark:!prevState.dark}));};this.setNotFound=()=>{this.setState({notFound:true});};this.setFound=()=>{this.setState({notFound:false});};}componentDidMount(){const lsDark=JSON.parse(localStorage.getItem('dark'));if(lsDark){this.setState({dark:lsDark});}}componentDidUpdate(prevState){const{dark}=this.state;if(prevState.dark!==dark){localStorage.setItem('dark',JSON.stringify(dark));}}render(){const{children}=this.props;const{dark,notFound}=this.state;return/*#__PURE__*/React.createElement(ThemeContext.Provider,{value:{dark,notFound,setFound:this.setFound,setNotFound:this.setNotFound,toggleDark:this.toggleDark}},children);}}/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ThemeContext);
 
 /***/ }),
 
-/***/ "./src/layout/index.js":
-/*!*****************************!*\
-  !*** ./src/layout/index.js ***!
-  \*****************************/
+/***/ 5453:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ MainLayout)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/lib/Helmet.js");
-/* harmony import */ var _context_ThemeContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/ThemeContext */ "./src/context/ThemeContext.js");
-/* harmony import */ var _components_Navigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Navigation */ "./src/components/Navigation.js");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Footer */ "./src/components/Footer.js");
-/* harmony import */ var _data_SiteConfig__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../data/SiteConfig */ "./data/SiteConfig.js");
-/* harmony import */ var _data_SiteConfig__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_data_SiteConfig__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _images_favicon_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../images/favicon.png */ "./src/images/favicon.png");
-/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../styles/main.scss */ "./src/styles/main.scss");
-/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_main_scss__WEBPACK_IMPORTED_MODULE_7__);
 
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "Z": () => (/* binding */ MainLayout)
+});
 
-
-
-
-
-
-
-class MainLayout extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
-  render() {
-    const {
-      dark,
-      notFound
-    } = this.context;
-    const {
-      children
-    } = this.props;
-    let themeClass = '';
-
-    if (dark && !notFound) {
-      themeClass = 'dark';
-    } else if (notFound) {
-      themeClass = 'not-found';
-    }
-
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_helmet__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      bodyAttributes: {
-        class: `theme ${themeClass}`
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("meta", {
-      name: "description",
-      content: (_data_SiteConfig__WEBPACK_IMPORTED_MODULE_5___default().siteDescription)
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("link", {
-      rel: "shortcut icon",
-      type: "image/png",
-      href: _images_favicon_png__WEBPACK_IMPORTED_MODULE_6__["default"]
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Navigation__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      menuLinks: (_data_SiteConfig__WEBPACK_IMPORTED_MODULE_5___default().menuLinks)
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", {
-      id: "main-content"
-    }, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], null));
-  }
-
-}
-MainLayout.contextType = _context_ThemeContext__WEBPACK_IMPORTED_MODULE_2__["default"];
+// EXTERNAL MODULE: external "/Users/khulafaurrasyidin/Documents/Research/RASYID.IN/dev-blog/node_modules/react/index.js"
+var index_js_ = __webpack_require__(8447);
+var index_js_default = /*#__PURE__*/__webpack_require__.n(index_js_);
+// EXTERNAL MODULE: ./node_modules/react-helmet/lib/Helmet.js
+var Helmet = __webpack_require__(5482);
+// EXTERNAL MODULE: ./src/context/ThemeContext.js
+var ThemeContext = __webpack_require__(1278);
+// EXTERNAL MODULE: ./.cache/gatsby-browser-entry.js + 4 modules
+var gatsby_browser_entry = __webpack_require__(7533);
+;// CONCATENATED MODULE: ./src/images/floppy.png
+/* harmony default export */ const floppy = (__webpack_require__.p + "static/floppy-a644d2bf058ab990b67c1ee0d3524511.png");
+;// CONCATENATED MODULE: ./src/images/sun.svg
+/* harmony default export */ const sun = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTI4IDEyODsiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogIDxnPgogICAgPHBhdGggZD0iTTY0LDMwLjM0Yy0xOC41OSwwLTMzLjY2LDE1LjA3LTMzLjY2LDMzLjY1YzAsMTguNTksMTUuMDcsMzMuNjYsMzMuNjYsMzMuNjYgYzE4LjU5LDAsMzMuNjYtMTUuMDcsMzMuNjYtMzMuNjZDOTcuNjYsNDUuNDEsODIuNTksMzAuMzQsNjQsMzAuMzR6IiBzdHlsZT0iZmlsbDojRkNDMjFCOyIvPgogICAgPHBhdGggZD0iTTU2Ljc2LDI0LjIxTDU2Ljc2LDI0LjIxaDE0LjQ5YzAuNjcsMCwxLjI5LTAuMzMsMS42OC0wLjg4YzAuMzgtMC41NCwwLjQ3LTEuMjUsMC4yNC0xLjg4IEw2NS45MiwxLjgzYy0wLjMtMC44MS0xLjA2LTEuMzQtMS45Mi0xLjM0cy0xLjYyLDAuNTQtMS45MiwxLjM0bC03LjI1LDE5LjYzYy0wLjIzLDAuNjMtMC4xNCwxLjMzLDAuMjQsMS44OCBDNTUuNDYsMjMuODksNTYuMDksMjQuMjEsNTYuNzYsMjQuMjF6IiBzdHlsZT0iZmlsbDojRkNDMjFCOyIvPgogICAgPHBhdGggZD0iTTk3LjI2LDQwLjk5YzAuMzgsMC4zOSwwLjkxLDAuNiwxLjQ0LDAuNmMwLjEyLDAsMC4yNC0wLjAxLDAuMzYtMC4wM2MwLjY2LTAuMTIsMS4yMS0wLjU1LDEuNS0xLjE2IGw4Ljc2LTE5LjAxYzAuMzYtMC43OCwwLjE5LTEuNjktMC40MS0yLjNjLTAuNjEtMC42MS0xLjUzLTAuNzctMi4zMS0wLjQyTDg3LjYsMjcuNDRjLTAuNjEsMC4yOC0xLjA0LDAuODQtMS4xNiwxLjUgYy0wLjEyLDAuNjYsMC4xLDEuMzMsMC41NiwxLjgxTDk3LjI2LDQwLjk5eiIgc3R5bGU9ImZpbGw6I0ZDQzIxQjsiLz4KICAgIDxwYXRoIGQ9Ik0xMjYuMTgsNjIuMDhsLTE5LjY0LTcuMjRjLTAuNjMtMC4yMy0xLjMzLTAuMTQtMS44OCwwLjI0Yy0wLjU1LDAuMzgtMC44NywxLTAuODcsMS42N2wwLjAxLDE0LjQ5IGMwLDAuNjcsMC4zMywxLjMsMC44OCwxLjY4YzAuMzUsMC4yMywwLjc2LDAuMzYsMS4xNywwLjM2YzAuMjQsMCwwLjQ4LTAuMDQsMC43MS0wLjEzbDE5LjY0LTcuMjRjMC44LTAuMjksMS4zNC0xLjA2LDEuMzQtMS45MyBDMTI3LjUyLDYzLjE0LDEyNi45OSw2Mi4zOCwxMjYuMTgsNjIuMDh6IiBzdHlsZT0iZmlsbDojRkNDMjFCOyIvPgogICAgPHBhdGggZD0iTTEwMC41Niw4Ny42Yy0wLjI4LTAuNjEtMC44NC0xLjA0LTEuNS0xLjE2Yy0wLjY2LTAuMTEtMS4zNCwwLjEtMS44LDAuNTdMODcuMDEsOTcuMjYgYy0wLjQ3LDAuNDctMC42OSwxLjE1LTAuNTcsMS44MWMwLjEyLDAuNjUsMC41NSwxLjIyLDEuMTYsMS41bDE5LjAxLDguNzZjMC4yNywwLjEzLDAuNTYsMC4xOCwwLjg2LDAuMTggYzAuNTMsMCwxLjA1LTAuMjEsMS40NC0wLjZjMC42MS0wLjYxLDAuNzctMS41MiwwLjQxLTIuM0wxMDAuNTYsODcuNnoiIHN0eWxlPSJmaWxsOiNGQ0MyMUI7Ii8+CiAgICA8cGF0aCBkPSJNNzEuMjQsMTAzLjc4TDcxLjI0LDEwMy43OGwtMTQuNDksMC4wMWMtMC42NywwLTEuMjksMC4zMy0xLjY3LDAuODggYy0wLjM4LDAuNTUtMC40NywxLjI1LTAuMjUsMS44N2w3LjI1LDE5LjY0YzAuMywwLjgsMS4wNiwxLjM0LDEuOTIsMS4zNHMxLjYyLTAuNTQsMS45Mi0xLjM0bDcuMjUtMTkuNjQgYzAuMjMtMC42MywwLjE0LTEuMzMtMC4yNC0xLjg4QzcyLjU0LDEwNC4xMSw3MS45MiwxMDMuNzgsNzEuMjQsMTAzLjc4eiIgc3R5bGU9ImZpbGw6I0ZDQzIxQjsiLz4KICAgIDxwYXRoIGQ9Ik0zMC43NCw4Ny4wMWMtMC40Ny0wLjQ3LTEuMTQtMC42OC0xLjgtMC41N2MtMC42NiwwLjEyLTEuMjIsMC41NS0xLjUsMS4xNmwtOC43NiwxOS4wMSBjLTAuMzYsMC43OC0wLjE5LDEuNywwLjQyLDIuM2MwLjM5LDAuMzksMC45MSwwLjYsMS40NCwwLjZjMC4yOSwwLDAuNTgtMC4wNiwwLjg2LTAuMTlsMTkuMDEtOC43N2MwLjYxLTAuMjgsMS4wNC0wLjg0LDEuMTYtMS41IGMwLjEyLTAuNjYtMC4xLTEuMzMtMC41Ny0xLjhMMzAuNzQsODcuMDF6IiBzdHlsZT0iZmlsbDojRkNDMjFCOyIvPgogICAgPHBhdGggZD0iTTIyLjE3LDczLjI5YzAuNDEsMCwwLjgyLTAuMTMsMS4xNy0wLjM3YzAuNTUtMC4zOCwwLjg4LTEuMDEsMC44OC0xLjY4bC0wLjAxLTE0LjQ5IGMwLTAuNjctMC4zMy0xLjI5LTAuODgtMS42OGMtMC41NS0wLjM4LTEuMjUtMC40Ny0xLjg3LTAuMjRMMS44Miw2Mi4wOGMtMC44LDAuMjktMS4zNCwxLjA2LTEuMzQsMS45MmMwLDAuODUsMC41MywxLjYyLDEuMzQsMS45MiBsMTkuNjUsNy4yNEMyMS43LDczLjI1LDIxLjkzLDczLjI5LDIyLjE3LDczLjI5eiIgc3R5bGU9ImZpbGw6I0ZDQzIxQjsiLz4KICAgIDxwYXRoIGQ9Ik0yNy40NSw0MC40YzAuMjgsMC42MSwwLjg0LDEuMDQsMS41LDEuMTZjMC4xMiwwLjAyLDAuMjQsMC4wMywwLjM2LDAuMDNjMC41NCwwLDEuMDYtMC4yMSwxLjQ1LTAuNiBMNDEsMzAuNzRjMC40Ny0wLjQ4LDAuNjgtMS4xNSwwLjU2LTEuODFjLTAuMTItMC42NS0wLjU1LTEuMjEtMS4xNi0xLjQ5bC0xOS4wMi04Ljc2Yy0wLjc4LTAuMzYtMS42OS0wLjE5LTIuMywwLjQyIGMtMC42MSwwLjYxLTAuNzcsMS41Mi0wLjQxLDIuM0wyNy40NSw0MC40eiIgc3R5bGU9ImZpbGw6I0ZDQzIxQjsiLz4KICA8L2c+Cjwvc3ZnPg==");
+;// CONCATENATED MODULE: ./src/images/moon.svg
+/* harmony default export */ const moon = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTI4IDEyODsiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogIDxwYXRoIGQ9Ik0xMDUuODcsMTQuOTljLTMuNzQtMy4zOS03LjkxLTYuMzgtMTIuNDItOC44OWMtMC44Ny0wLjQ5LTItMC4zNS0yLjcxLDAuMzMgYy0wLjcxLDAuNjgtMC44MywxLjczLTAuMjksMi41M2MxNS42MywyMi45MywxMi4yOSw1Mi41Mi04LjExLDcxLjk3Yy0xMS45LDExLjM1LTI3Ljg1LDE3LjYtNDQuOTEsMTcuNiBjLTExLjM5LDAtMjIuNTQtMi44Ni0zMi4yNC04LjI3Yy0wLjg3LTAuNDktMi0wLjM2LTIuNzEsMC4zM2MtMC43MSwwLjY4LTAuODMsMS43Mi0wLjI4LDIuNTNjMi44MSw0LjEyLDYuMTIsNy45Myw5Ljg2LDExLjMyIGMxMi42MSwxMS40NSwyOS4yNywxNy43Niw0Ni45LDE3Ljc2YzE4LjI3LDAsMzUuMzQtNi43LDQ4LjA5LTE4Ljg2YzEyLjUzLTExLjk0LDE5LjMxLTI3LjcxLDE5LjA5LTQ0LjQgQzEyNS45Miw0Mi4yNSwxMTguNzIsMjYuNjQsMTA1Ljg3LDE0Ljk5eiIgc3R5bGU9ImZpbGw6I0ZDQzIxQjsiLz4KPC9zdmc+");
+;// CONCATENATED MODULE: ./src/components/Navigation.js
+class Navigation extends index_js_.Component{constructor(...args){super(...args);this.state={scrolled:false};this.navOnScroll=()=>{if(window.scrollY>20){this.setState({scrolled:true});}else{this.setState({scrolled:false});}};}componentDidMount(){window.addEventListener('scroll',this.navOnScroll);}componentWillUnmount(){window.removeEventListener('scroll',this.navOnScroll);}render(){const{scrolled}=this.state;const{menuLinks}=this.props;const theme=this.context;return/*#__PURE__*/index_js_default().createElement("nav",{className:scrolled?'nav scroll':'nav'},/*#__PURE__*/index_js_default().createElement("div",{className:"nav-container"},/*#__PURE__*/index_js_default().createElement("div",{className:"brand"},/*#__PURE__*/index_js_default().createElement(gatsby_browser_entry.Link,{to:"/"},/*#__PURE__*/index_js_default().createElement("img",{src:floppy,className:"favicon",alt:"Floppy Diskette"}),/*#__PURE__*/index_js_default().createElement("span",{className:"text"},"Khulafaur Rasyidin"))),/*#__PURE__*/index_js_default().createElement("div",{className:"links"},menuLinks.map(link=>/*#__PURE__*/index_js_default().createElement(gatsby_browser_entry.Link,{key:link.name,to:link.link,activeClassName:"active"},link.name))),/*#__PURE__*/index_js_default().createElement("div",{className:"cta"},/*#__PURE__*/index_js_default().createElement("button",{className:"dark-switcher",onClick:theme.toggleDark,"aria-label":"Toggle Dark Mode.",title:"Toggle Dark Mode"},theme.dark?/*#__PURE__*/index_js_default().createElement("img",{src:sun,className:"theme-icon",alt:"Light Mode"}):/*#__PURE__*/index_js_default().createElement("img",{src:moon,className:"theme-icon",alt:"Dark Mode"})))));}}Navigation.contextType=ThemeContext/* default */.Z;
+;// CONCATENATED MODULE: ./content/thumbnails/facebook.png
+/* harmony default export */ const facebook = (__webpack_require__.p + "static/facebook-d902847c7a94b5fb6cbe8a23aa8df9d1.png");
+// EXTERNAL MODULE: ./content/thumbnails/gatsby.png
+var gatsby = __webpack_require__(828);
+;// CONCATENATED MODULE: ./content/thumbnails/instagram.png
+/* harmony default export */ const instagram = (__webpack_require__.p + "static/instagram-97d44d149b291bd0d885e8cea9c63f28.png");
+;// CONCATENATED MODULE: ./src/components/Footer.js
+class Footer extends index_js_.Component{render(){return/*#__PURE__*/index_js_default().createElement("footer",{className:"footer container"},/*#__PURE__*/index_js_default().createElement("div",null,/*#__PURE__*/index_js_default().createElement("a",{href:"https://gatsbyjs.org",target:"_blank",rel:"noopener noreferrer"},"Build with Gatsby JS + AWS Amplify")),/*#__PURE__*/index_js_default().createElement("div",null,/*#__PURE__*/index_js_default().createElement("a",{href:"https://instagram.com/khulafaurrr",title:"Instagram"},/*#__PURE__*/index_js_default().createElement("img",{src:instagram,target:"_blank",rel:"noopener noreferrer",className:"footer-img",alt:"Instagram"})),/*#__PURE__*/index_js_default().createElement("a",{href:"https://gatsbyjs.org",title:"By Gatsby JS"},/*#__PURE__*/index_js_default().createElement("img",{src:gatsby/* default */.Z,target:"_blank",rel:"noopener noreferrer",className:"footer-img",alt:"Gatsby JS"}))));}}
+// EXTERNAL MODULE: ./data/SiteConfig.js
+var SiteConfig = __webpack_require__(4479);
+var SiteConfig_default = /*#__PURE__*/__webpack_require__.n(SiteConfig);
+;// CONCATENATED MODULE: ./src/images/favicon.png
+/* harmony default export */ const favicon = ("data:image/png;base64,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");
+;// CONCATENATED MODULE: ./src/layout/index.js
+class MainLayout extends index_js_.Component{render(){const{dark,notFound}=this.context;const{children}=this.props;let themeClass='';if(dark&&!notFound){themeClass='dark';}else if(notFound){themeClass='not-found';}return/*#__PURE__*/index_js_default().createElement((index_js_default()).Fragment,null,/*#__PURE__*/index_js_default().createElement(Helmet["default"],{bodyAttributes:{class:`theme ${themeClass}`}},/*#__PURE__*/index_js_default().createElement("meta",{name:"description",content:(SiteConfig_default()).siteDescription}),/*#__PURE__*/index_js_default().createElement("link",{rel:"shortcut icon",type:"image/png",href:favicon})),/*#__PURE__*/index_js_default().createElement(Navigation,{menuLinks:(SiteConfig_default()).menuLinks}),/*#__PURE__*/index_js_default().createElement("main",{id:"main-content"},children),/*#__PURE__*/index_js_default().createElement(Footer,null));}}MainLayout.contextType=ThemeContext/* default */.Z;
 
 /***/ }),
 
-/***/ "./src/templates/category.js":
-/*!***********************************!*\
-  !*** ./src/templates/category.js ***!
-  \***********************************/
+/***/ 6086:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1194,75 +168,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ CategoryTemplate)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8447);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/lib/Helmet.js");
-/* harmony import */ var _layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../layout */ "./src/layout/index.js");
-/* harmony import */ var _components_PostListing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/PostListing */ "./src/components/PostListing.js");
-/* harmony import */ var _data_SiteConfig__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../data/SiteConfig */ "./data/SiteConfig.js");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5482);
+/* harmony import */ var _layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5453);
+/* harmony import */ var _components_PostListing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4403);
+/* harmony import */ var _data_SiteConfig__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4479);
 /* harmony import */ var _data_SiteConfig__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_data_SiteConfig__WEBPACK_IMPORTED_MODULE_4__);
-
-
-
-
-
-class CategoryTemplate extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
-  render() {
-    const {
-      category
-    } = this.props.pageContext;
-    const postEdges = this.props.data.allMarkdownRemark.edges;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_layout__WEBPACK_IMPORTED_MODULE_2__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_helmet__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      title: `Posts in category "${category}" – ${(_data_SiteConfig__WEBPACK_IMPORTED_MODULE_4___default().siteTitle)}`
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "container"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, category), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_PostListing__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      postEdges: postEdges
-    })));
-  }
-
-}
-const pageQuery = "497341433";
+class CategoryTemplate extends react__WEBPACK_IMPORTED_MODULE_0__.Component{render(){const{category}=this.props.pageContext;const postEdges=this.props.data.allMarkdownRemark.edges;return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_layout__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z,null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_helmet__WEBPACK_IMPORTED_MODULE_1__["default"],{title:`Posts in category "${category}" – ${(_data_SiteConfig__WEBPACK_IMPORTED_MODULE_4___default().siteTitle)}`}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div",{className:"container"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1",null,category),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_PostListing__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z,{postEdges:postEdges})));}}const pageQuery="497341433";
 
 /***/ }),
 
-/***/ "./src/utils/global.js":
-/*!*****************************!*\
-  !*** ./src/utils/global.js ***!
-  \*****************************/
+/***/ 838:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "editOnGithub": () => (/* binding */ editOnGithub),
-/* harmony export */   "formatDate": () => (/* binding */ formatDate)
+/* harmony export */   "p": () => (/* binding */ formatDate),
+/* harmony export */   "q": () => (/* binding */ editOnGithub)
 /* harmony export */ });
-/* harmony import */ var url_join__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! url-join */ "./node_modules/url-join/lib/url-join.js");
+/* harmony import */ var url_join__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4078);
 /* harmony import */ var url_join__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(url_join__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(381);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _data_SiteConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data/SiteConfig */ "./data/SiteConfig.js");
+/* harmony import */ var _data_SiteConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4479);
 /* harmony import */ var _data_SiteConfig__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_data_SiteConfig__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-
-const formatDate = date => moment__WEBPACK_IMPORTED_MODULE_1___default().utc(date).format((_data_SiteConfig__WEBPACK_IMPORTED_MODULE_2___default().dateFormat));
-
-const editOnGithub = post => {
-  const date = moment__WEBPACK_IMPORTED_MODULE_1___default().utc(post.date).format((_data_SiteConfig__WEBPACK_IMPORTED_MODULE_2___default().dateFromFormat));
-  return url_join__WEBPACK_IMPORTED_MODULE_0___default()((_data_SiteConfig__WEBPACK_IMPORTED_MODULE_2___default().repo), '/blob/master/content/posts', `${date}-${post.slug}.md`);
-};
-
-
+const formatDate=date=>moment__WEBPACK_IMPORTED_MODULE_1___default().utc(date).format((_data_SiteConfig__WEBPACK_IMPORTED_MODULE_2___default().dateFormat));const editOnGithub=post=>{const date=moment__WEBPACK_IMPORTED_MODULE_1___default().utc(post.date).format((_data_SiteConfig__WEBPACK_IMPORTED_MODULE_2___default().dateFromFormat));return url_join__WEBPACK_IMPORTED_MODULE_0___default()((_data_SiteConfig__WEBPACK_IMPORTED_MODULE_2___default().repo),'/blob/master/content/posts',`${date}-${post.slug}.md`);};
 
 /***/ }),
 
-/***/ "./node_modules/moment/moment.js":
-/*!***************************************!*\
-  !*** ./node_modules/moment/moment.js ***!
-  \***************************************/
+/***/ 381:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 /* module decorator */ module = __webpack_require__.nmd(module);
@@ -5871,20 +4806,7 @@ const editOnGithub = post => {
 
 /***/ }),
 
-/***/ "./src/styles/main.scss":
-/*!******************************!*\
-  !*** ./src/styles/main.scss ***!
-  \******************************/
-/***/ (() => {
-
-
-
-/***/ }),
-
-/***/ "./node_modules/url-join/lib/url-join.js":
-/*!***********************************************!*\
-  !*** ./node_modules/url-join/lib/url-join.js ***!
-  \***********************************************/
+/***/ 4078:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (name, context, definition) {
@@ -5973,108 +4895,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (nam
 
 /***/ }),
 
-/***/ "./content/thumbnails/facebook.png":
-/*!*****************************************!*\
-  !*** ./content/thumbnails/facebook.png ***!
-  \*****************************************/
+/***/ 828:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/facebook-d902847c7a94b5fb6cbe8a23aa8df9d1.png");
-
-/***/ }),
-
-/***/ "./content/thumbnails/gatsby.png":
-/*!***************************************!*\
-  !*** ./content/thumbnails/gatsby.png ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/gatsby-e0fc01a9a0a5c4198be67d2cf16e935c.png");
-
-/***/ }),
-
-/***/ "./content/thumbnails/instagram.png":
-/*!******************************************!*\
-  !*** ./content/thumbnails/instagram.png ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/instagram-97d44d149b291bd0d885e8cea9c63f28.png");
-
-/***/ }),
-
-/***/ "./src/images/favicon.png":
-/*!********************************!*\
-  !*** ./src/images/favicon.png ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/png;base64,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");
-
-/***/ }),
-
-/***/ "./src/images/floppy.png":
-/*!*******************************!*\
-  !*** ./src/images/floppy.png ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/floppy-a644d2bf058ab990b67c1ee0d3524511.png");
-
-/***/ }),
-
-/***/ "./src/images/moon.svg":
-/*!*****************************!*\
-  !*** ./src/images/moon.svg ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTI4IDEyODsiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogIDxwYXRoIGQ9Ik0xMDUuODcsMTQuOTljLTMuNzQtMy4zOS03LjkxLTYuMzgtMTIuNDItOC44OWMtMC44Ny0wLjQ5LTItMC4zNS0yLjcxLDAuMzMgYy0wLjcxLDAuNjgtMC44MywxLjczLTAuMjksMi41M2MxNS42MywyMi45MywxMi4yOSw1Mi41Mi04LjExLDcxLjk3Yy0xMS45LDExLjM1LTI3Ljg1LDE3LjYtNDQuOTEsMTcuNiBjLTExLjM5LDAtMjIuNTQtMi44Ni0zMi4yNC04LjI3Yy0wLjg3LTAuNDktMi0wLjM2LTIuNzEsMC4zM2MtMC43MSwwLjY4LTAuODMsMS43Mi0wLjI4LDIuNTNjMi44MSw0LjEyLDYuMTIsNy45Myw5Ljg2LDExLjMyIGMxMi42MSwxMS40NSwyOS4yNywxNy43Niw0Ni45LDE3Ljc2YzE4LjI3LDAsMzUuMzQtNi43LDQ4LjA5LTE4Ljg2YzEyLjUzLTExLjk0LDE5LjMxLTI3LjcxLDE5LjA5LTQ0LjQgQzEyNS45Miw0Mi4yNSwxMTguNzIsMjYuNjQsMTA1Ljg3LDE0Ljk5eiIgc3R5bGU9ImZpbGw6I0ZDQzIxQjsiLz4KPC9zdmc+");
-
-/***/ }),
-
-/***/ "./src/images/sun.svg":
-/*!****************************!*\
-  !*** ./src/images/sun.svg ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTI4IDEyODsiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogIDxnPgogICAgPHBhdGggZD0iTTY0LDMwLjM0Yy0xOC41OSwwLTMzLjY2LDE1LjA3LTMzLjY2LDMzLjY1YzAsMTguNTksMTUuMDcsMzMuNjYsMzMuNjYsMzMuNjYgYzE4LjU5LDAsMzMuNjYtMTUuMDcsMzMuNjYtMzMuNjZDOTcuNjYsNDUuNDEsODIuNTksMzAuMzQsNjQsMzAuMzR6IiBzdHlsZT0iZmlsbDojRkNDMjFCOyIvPgogICAgPHBhdGggZD0iTTU2Ljc2LDI0LjIxTDU2Ljc2LDI0LjIxaDE0LjQ5YzAuNjcsMCwxLjI5LTAuMzMsMS42OC0wLjg4YzAuMzgtMC41NCwwLjQ3LTEuMjUsMC4yNC0xLjg4IEw2NS45MiwxLjgzYy0wLjMtMC44MS0xLjA2LTEuMzQtMS45Mi0xLjM0cy0xLjYyLDAuNTQtMS45MiwxLjM0bC03LjI1LDE5LjYzYy0wLjIzLDAuNjMtMC4xNCwxLjMzLDAuMjQsMS44OCBDNTUuNDYsMjMuODksNTYuMDksMjQuMjEsNTYuNzYsMjQuMjF6IiBzdHlsZT0iZmlsbDojRkNDMjFCOyIvPgogICAgPHBhdGggZD0iTTk3LjI2LDQwLjk5YzAuMzgsMC4zOSwwLjkxLDAuNiwxLjQ0LDAuNmMwLjEyLDAsMC4yNC0wLjAxLDAuMzYtMC4wM2MwLjY2LTAuMTIsMS4yMS0wLjU1LDEuNS0xLjE2IGw4Ljc2LTE5LjAxYzAuMzYtMC43OCwwLjE5LTEuNjktMC40MS0yLjNjLTAuNjEtMC42MS0xLjUzLTAuNzctMi4zMS0wLjQyTDg3LjYsMjcuNDRjLTAuNjEsMC4yOC0xLjA0LDAuODQtMS4xNiwxLjUgYy0wLjEyLDAuNjYsMC4xLDEuMzMsMC41NiwxLjgxTDk3LjI2LDQwLjk5eiIgc3R5bGU9ImZpbGw6I0ZDQzIxQjsiLz4KICAgIDxwYXRoIGQ9Ik0xMjYuMTgsNjIuMDhsLTE5LjY0LTcuMjRjLTAuNjMtMC4yMy0xLjMzLTAuMTQtMS44OCwwLjI0Yy0wLjU1LDAuMzgtMC44NywxLTAuODcsMS42N2wwLjAxLDE0LjQ5IGMwLDAuNjcsMC4zMywxLjMsMC44OCwxLjY4YzAuMzUsMC4yMywwLjc2LDAuMzYsMS4xNywwLjM2YzAuMjQsMCwwLjQ4LTAuMDQsMC43MS0wLjEzbDE5LjY0LTcuMjRjMC44LTAuMjksMS4zNC0xLjA2LDEuMzQtMS45MyBDMTI3LjUyLDYzLjE0LDEyNi45OSw2Mi4zOCwxMjYuMTgsNjIuMDh6IiBzdHlsZT0iZmlsbDojRkNDMjFCOyIvPgogICAgPHBhdGggZD0iTTEwMC41Niw4Ny42Yy0wLjI4LTAuNjEtMC44NC0xLjA0LTEuNS0xLjE2Yy0wLjY2LTAuMTEtMS4zNCwwLjEtMS44LDAuNTdMODcuMDEsOTcuMjYgYy0wLjQ3LDAuNDctMC42OSwxLjE1LTAuNTcsMS44MWMwLjEyLDAuNjUsMC41NSwxLjIyLDEuMTYsMS41bDE5LjAxLDguNzZjMC4yNywwLjEzLDAuNTYsMC4xOCwwLjg2LDAuMTggYzAuNTMsMCwxLjA1LTAuMjEsMS40NC0wLjZjMC42MS0wLjYxLDAuNzctMS41MiwwLjQxLTIuM0wxMDAuNTYsODcuNnoiIHN0eWxlPSJmaWxsOiNGQ0MyMUI7Ii8+CiAgICA8cGF0aCBkPSJNNzEuMjQsMTAzLjc4TDcxLjI0LDEwMy43OGwtMTQuNDksMC4wMWMtMC42NywwLTEuMjksMC4zMy0xLjY3LDAuODggYy0wLjM4LDAuNTUtMC40NywxLjI1LTAuMjUsMS44N2w3LjI1LDE5LjY0YzAuMywwLjgsMS4wNiwxLjM0LDEuOTIsMS4zNHMxLjYyLTAuNTQsMS45Mi0xLjM0bDcuMjUtMTkuNjQgYzAuMjMtMC42MywwLjE0LTEuMzMtMC4yNC0xLjg4QzcyLjU0LDEwNC4xMSw3MS45MiwxMDMuNzgsNzEuMjQsMTAzLjc4eiIgc3R5bGU9ImZpbGw6I0ZDQzIxQjsiLz4KICAgIDxwYXRoIGQ9Ik0zMC43NCw4Ny4wMWMtMC40Ny0wLjQ3LTEuMTQtMC42OC0xLjgtMC41N2MtMC42NiwwLjEyLTEuMjIsMC41NS0xLjUsMS4xNmwtOC43NiwxOS4wMSBjLTAuMzYsMC43OC0wLjE5LDEuNywwLjQyLDIuM2MwLjM5LDAuMzksMC45MSwwLjYsMS40NCwwLjZjMC4yOSwwLDAuNTgtMC4wNiwwLjg2LTAuMTlsMTkuMDEtOC43N2MwLjYxLTAuMjgsMS4wNC0wLjg0LDEuMTYtMS41IGMwLjEyLTAuNjYtMC4xLTEuMzMtMC41Ny0xLjhMMzAuNzQsODcuMDF6IiBzdHlsZT0iZmlsbDojRkNDMjFCOyIvPgogICAgPHBhdGggZD0iTTIyLjE3LDczLjI5YzAuNDEsMCwwLjgyLTAuMTMsMS4xNy0wLjM3YzAuNTUtMC4zOCwwLjg4LTEuMDEsMC44OC0xLjY4bC0wLjAxLTE0LjQ5IGMwLTAuNjctMC4zMy0xLjI5LTAuODgtMS42OGMtMC41NS0wLjM4LTEuMjUtMC40Ny0xLjg3LTAuMjRMMS44Miw2Mi4wOGMtMC44LDAuMjktMS4zNCwxLjA2LTEuMzQsMS45MmMwLDAuODUsMC41MywxLjYyLDEuMzQsMS45MiBsMTkuNjUsNy4yNEMyMS43LDczLjI1LDIxLjkzLDczLjI5LDIyLjE3LDczLjI5eiIgc3R5bGU9ImZpbGw6I0ZDQzIxQjsiLz4KICAgIDxwYXRoIGQ9Ik0yNy40NSw0MC40YzAuMjgsMC42MSwwLjg0LDEuMDQsMS41LDEuMTZjMC4xMiwwLjAyLDAuMjQsMC4wMywwLjM2LDAuMDNjMC41NCwwLDEuMDYtMC4yMSwxLjQ1LTAuNiBMNDEsMzAuNzRjMC40Ny0wLjQ4LDAuNjgtMS4xNSwwLjU2LTEuODFjLTAuMTItMC42NS0wLjU1LTEuMjEtMS4xNi0xLjQ5bC0xOS4wMi04Ljc2Yy0wLjc4LTAuMzYtMS42OS0wLjE5LTIuMywwLjQyIGMtMC42MSwwLjYxLTAuNzcsMS41Mi0wLjQxLDIuM0wyNy40NSw0MC40eiIgc3R5bGU9ImZpbGw6I0ZDQzIxQjsiLz4KICA8L2c+Cjwvc3ZnPg==");
 
 /***/ })
 

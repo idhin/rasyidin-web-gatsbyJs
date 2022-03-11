@@ -1,4 +1,4 @@
-### Type definitions saved at 2022-03-11T04:15:39.858Z ###
+### Type definitions saved at 2022-03-11T08:22:10.860Z ###
 
 type File implements Node @dontInfer {
   sourceInstanceName: String!
@@ -480,5 +480,9 @@ type MarkdownRemarkFrontmatter {
 
 type MarkdownRemarkFields {
   slug: String
+  nextTitle: String
+  nextSlug: String
+  prevTitle: String
+  prevSlug: String
   date: Date @dateformat
 }
