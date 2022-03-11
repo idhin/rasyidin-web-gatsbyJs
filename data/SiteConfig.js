@@ -20,7 +20,7 @@ const config = {
   userTwitter: 'codesbandit',
   menuLinks: [
     {
-      name: 'Me',
+      name: 'Tentang Saya',
       link: '/me/',
     },
     {
