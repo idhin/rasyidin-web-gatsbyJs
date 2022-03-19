@@ -11,7 +11,7 @@ tags:
   - Random
 ---
 
-Halo gaisss 👋. Website ini bakal aku pakai untuk menulis apapun yang saya rasa perlu untuk saya bagikan. Setelah sekian lama vakum nulis semoga aja melalui website ini bakal banyak yang bisa saya bagikan dan diskusikan dengan temen-temen.
+Halo gais 👋. Website ini bakal saya pakai untuk menulis apapun yang saya rasa perlu untuk saya bagikan. Setelah sekian lama vakum nulis semoga aja melalui website ini bakal banyak yang bisa saya bagikan dan diskusikan dengan temen-temen.
 
 > Sengaja dibuat seminimalis mungkin tanpa gangguan iklan. Lagian siapa yang suka dengan tampilan yang ribet 🤡
 
