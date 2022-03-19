@@ -10,7 +10,7 @@ export default class Footer extends Component {
       <footer className="footer container">
         <div>
           <a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer">
-            Build with Gatsby JS + AWS Amplify
+            Develop by Gatsby JS + AWS Amplify
           </a>
         </div>
         <div>
