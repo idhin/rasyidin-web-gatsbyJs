@@ -5,14 +5,14 @@ template: post
 thumbnail: '../thumbnails/apache.png'
 slug: tulisan-pertama
 categories:
-  - Sharing
+  - Tools
 tags:
-  - Sharing
-  - Random
+  - php
+  - apache
 ---
 
 Halo gais 👋. Website ini bakal saya pakai untuk menulis apapun yang saya rasa perlu untuk saya bagikan. Setelah sekian lama vakum nulis semoga aja melalui website ini bakal banyak yang bisa saya bagikan dan diskusikan dengan temen-temen.
 
-> Sengaja dibuat seminimalis mungkin tanpa gangguan iklan. Lagian siapa yang suka dengan tampilan yang ribet 🤡
+> Website ini sengaja saya buat tanpa iklan, karena yaa siapa yang sukaa gangguan spam iklan 🤡
 
 Jika ada ide untuk hal-hal yang perlu saya tulis disini, saya sangat terbuka untuk itu. Boleh email saya di [khulafaur@rasyid.in](mailto:khulafaur@rasyid.in). Terimakasih ya 🖐
