@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-categories-js",
+    "path": "/categories/",
+    "result": {"data":{"allMarkdownRemark":{"group":[{"fieldValue":"Education","totalCount":1},{"fieldValue":"Forensic","totalCount":1},{"fieldValue":"Mobile Phone","totalCount":1},{"fieldValue":"Sharing","totalCount":3}]}},"pageContext":{}},
+    "staticQueryHashes": []}
